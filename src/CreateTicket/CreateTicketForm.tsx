@@ -5,7 +5,6 @@ import { createTicket } from "./CreateTicket.ts";
 export function CreateTicketForm() {
     const { getAccessTokenSilently } = useAuth0();
     
-    let ticketNumber;
     const [subject, setSubject] = useState("");
     const [body, setBody] = useState("");
 
@@ -13,7 +12,6 @@ export function CreateTicketForm() {
         e.preventDefault();
 
         await createTicket(getAccessTokenSilently, {
-            ticketNumber,
             subject,
             body
         });
