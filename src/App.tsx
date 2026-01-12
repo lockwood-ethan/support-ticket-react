@@ -1,6 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './LoginButton';
-import CreateTicketPage from './CreateTicket/CreateTicketPage';
+import UserTicketList from './UserTicketList';
 
 function App() {
   const { isAuthenticated, isLoading, error } = useAuth0();
@@ -31,7 +31,7 @@ function App() {
     <div>
         {isAuthenticated ? (
           <div>
-            <CreateTicketPage />
+            <UserTicketList />
           </div>
         ) : (
           <div className="action-card">
